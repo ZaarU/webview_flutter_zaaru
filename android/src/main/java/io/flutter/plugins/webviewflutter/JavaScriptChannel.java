@@ -49,7 +49,7 @@ class JavaScriptChannel {
             methodChannel.invokeMethod("javascriptChannelMessage", arguments);
           }
         };
-    if (platformThreadHandler.getLooper() == Looper.myLooper()) {
+    if (platformThreadHandler.getLooper() == Looper.getMainLooper()) {
       postMessageRunnable.run();
     } else {
       platformThreadHandler.post(postMessageRunnable);
